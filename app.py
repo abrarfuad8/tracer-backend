@@ -15,6 +15,13 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def home():
+    return jsonify({
+        "success": True,
+        "message": "Tracer Backend is running"
+    })
+
 
 SMTP_EMAIL = os.getenv("SMTP_EMAIL")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
